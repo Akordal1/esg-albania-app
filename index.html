@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Albania - Sisteme Sigurie Profesionale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #0b1120;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #22c55e;
+        }
+
+        .menu-btn {
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)),
+                        url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1600') center/cover no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 35px;
+            max-width: 520px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 14px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 60px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #22c55e;
+            border-radius: 2px;
+        }
+
+        /* PROJEKTET */
+        .projects {
+            background: #0f172a;
+        }
+
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .projects-header a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+        }
+ .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* SHERBIMET */
+        .services {
+            background: #0b1120;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 900px;
+        }
+
+        .service-item {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            background: #334155;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: #0f172a;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .service-text h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .service-text p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .service-arrow {
+            margin-left: auto;
+            color: #64748b;
+            font-size: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header, section, .hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <span>ESG</span> Albania
+        </div>
+        <div class="menu-btn">☰</div>
+    </header>
+<!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sisteme Sigurie<br>Profesionale</h1>
+            <p>Zgjidhje të avancuara sigurie për bizneset, shtëpitë dhe institucionet.</p>
+            <a href="#sherbimet" class="btn">MËSO MË SHUMË →</a>
+        </div>
+    </section>
+
+    <!-- PROJEKTET -->
+    <section class="projects" id="projektet">
+        <div class="projects-header">
+            <h2 class="section-title">Projektet Tona</h2>
+            <a href="#">Shiko të gjitha →</a>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=400" alt="Kamera">
+                <h3>Kamera Sigurie – Tiranë</h3>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400" alt="Alarm">
+                <h3>Sistem Alarmi – Durrës</h3>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400" alt="Zjarr">
+                <h3>Sistem Zjarri – Elbasan</h3>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1558002038-1091a466f6c0?w=400" alt="Access">
+                <h3>Access Control – Korçë</h3>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580b7e8c?w=400" alt="Rrjet">
+                <h3>Rrjeta Kompjuterike – Vlorë</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHERBIMET -->
+    <section class="services" id="sherbimet">
+        <h2 class="section-title">Shërbimet Tona</h2>
+
+        <div class="services-list">
+            <div class="service-item">
+                <div class="service-icon">📷</div>
+                <div class="service-text">
+                    <h3>Sisteme Kamerash</h3>
+                    <p>Kamera IP profesionale, me rezolucion të lartë dhe monitorim 24/7.</p>
+                </div>
+                <div class="service-arrow">›</div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">🛡️</div>
+                <div class="service-text">
+                    <h3>Sisteme Alarmi</h3>
+                    <p>Sisteme alarmi të avancuara për mbrojtjen e pronës dhe personave.</p>
+                </div>
+                <div class="service-arrow">›</div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">🔥</div>
+                <div class="service-text">
+                    <h3>Sisteme Zjarri</h3>
+                    <p>Sisteme detektimi dhe fikje zjarri për mbrojtje maksimale.</p>
+                </div>
+                <div class="service-arrow">›</div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">🔑</div>
+                <div class="service-text">
+                    <h3>Access Control</h3>
+                    <p>Kontroll hyrjeje dhe menaxhim i sigurt i aksesit në ambiente.</p>
+                </div>
+                <div class="service-arrow">›</div>
+            </div>
+<div class="service-item">
+                <div class="service-icon">🔊</div>
+                <div class="service-text">
+                    <h3>Sisteme Audio</h3>
+                    <p>Sisteme audio profesionale për transmetim, evakuim dhe komunikim.</p>
+                </div>
+                <div class="service-arrow">›</div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">🌐</div>
+                <div class="service-text">
+                    <h3>Rrjeta Kompjuterike</h3>
+                    <p>Zgjidhje rrjeti të sigurta dhe me performancë të lartë.</p>
+                </div>
+                <div class="service-arrow">›</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 ESG Albania. Të gjitha të drejtat e rezervuara.
+    </footer>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/355682030305" class="whatsapp-btn" target="_blank" title="Na kontaktoni në WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
